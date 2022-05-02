@@ -1,6 +1,19 @@
 .stations-list {
+	margin: 0 auto;
+	max-width: 90%;
+}
+.stations-list__form-container {
+	margin: 0 auto;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	justify-content: center;
+}
+
+.stations-list__list {
 	list-style: none;
 	margin: 0 auto;
+	margin-top: 100px;
 	padding: 0;
 	display: grid;
 	gap: 17px;

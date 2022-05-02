@@ -1,26 +1,42 @@
 import React, { useState } from 'react';
+import AdminForm from '../AdminForm/AdminForm';
 import Station from '../Station/Station';
 import './StationsList.css';
 
-function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStation }) {
-	const [name, setName] = useState('');
-	const [comment, setComment] = useState('');
+function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStation, onUpdateStation }) {
+	const [nameCreate, setNameCreate] = useState('');
+	const [commentCreate, setCommentCreate] = useState('');
 	const [searchId, setSearchId] = useState('');
+	const [nameUpdate, setNameUpdate] = useState('');
+	const [commentUpdate, setCommentUpdate] = useState('');
+	const [idUpdate, setIdUpdate] = useState('');
 
-	function handleChangeName(e) {
-		setName(e.target.value);
+	function handleChangeNameCreate(e) {
+		setNameCreate(e.target.value);
 	}
-	function handleChangeComment(e) {
-		setComment(e.target.value);
+	function handleChangeCommentCreate(e) {
+		setCommentCreate(e.target.value);
 	}
 
 	function handleChangeSearchIdInput(e) {
 		setSearchId(e.target.value);
 	}
 
+	function handleChangeNameUpdate(e) {
+		setNameUpdate(e.target.value);
+	}
+	function handleChangeCommentUpdate(e) {
+		setCommentUpdate(e.target.value);
+	}
+
+	function handleChangeIdInputUpdate(e) {
+		setIdUpdate(e.target.value);
+	}
+
 	function handleSubmitCreateStation(e) {
 		e.preventDefault();
-		onCreateStation(name, comment);
+		onCreateStation(nameCreate, commentCreate);
+		document.getElementById('stations-list').focus();
 	}
 
 	function handleSubmitSearchStation(e) {
@@ -28,55 +44,99 @@ function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStat
 		onSearchStation(searchId);
 	}
 
+	function handleSubmitUpdateStation(e) {
+		e.preventDefault();
+		onUpdateStation(idUpdate, nameUpdate, commentUpdate);
+	}
+
+	function handleClickEditButton(id) {
+		setIdUpdate(id);
+		document.getElementById('id-update-input').focus();
+	}
+
 	return (
-		<>
-			<form onSubmit={handleSubmitCreateStation}>
-				<label className='auth-form__label'>
-					Name
-					<input
-						className='auth-form__input'
-						id='name-input'
-						type='text'
-						autoComplete='none'
-						placeholder='Plese enter your login'
-						value={name ?? ''}
-						onChange={handleChangeName}
-					></input>
-				</label>
-				<label className='auth-form__label'>
-					Comment
-					<input
-						className='auth-form__input'
-						id='comment-input'
-						type='text'
-						autoComplete='none'
-						placeholder='Please enter your password'
-						value={comment ?? ''}
-						onChange={handleChangeComment}
-					></input>
-				</label>
-				<button className='auth-form__submit-button' type='submit'>
-					Add station
-				</button>
-			</form>
-			<form onSubmit={handleSubmitSearchStation}>
-				<label className='auth-form__label'>
-					Search station by id
-					<input
-						className='auth-form__input'
-						id='id-input'
-						type='text'
-						autoComplete='none'
-						placeholder='Plese enter id'
-						value={searchId ?? ''}
-						onChange={handleChangeSearchIdInput}
-					></input>
-				</label>
-				<button className='auth-form__submit-button' type='submit'>
-					Search
-				</button>
-			</form>
-			<ul className='stations-list'>
+		<div className='stations-list'>
+			<div className='stations-list__form-container'>
+				<AdminForm onSubmit={handleSubmitCreateStation} buttonName='Add' title='Add new station'>
+					<label className='admin-form__label'>
+						Name:
+						<input
+							className='admin-form__input'
+							id='name-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Please enter name'
+							value={nameCreate ?? ''}
+							onChange={handleChangeNameCreate}
+						></input>
+					</label>
+					<label className='admin-form__label'>
+						Comment:
+						<input
+							className='admin-form__input'
+							id='comment-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Please enter comment'
+							value={commentCreate ?? ''}
+							onChange={handleChangeCommentCreate}
+						></input>
+					</label>
+				</AdminForm>
+				<AdminForm onSubmit={handleSubmitSearchStation} buttonName='Search' title='Search station by id'>
+					<label className='admin-form__label'>
+						Station id:
+						<input
+							className='admin-form__input'
+							id='id-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Plese enter id'
+							value={searchId ?? ''}
+							onChange={handleChangeSearchIdInput}
+						></input>
+					</label>
+				</AdminForm>
+				<AdminForm onSubmit={handleSubmitUpdateStation} buttonName='Update' title='Update station'>
+					<label className='admin-form__label'>
+						Station id:
+						<input
+							className='admin-form__input'
+							id='id-update-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Plese enter id'
+							value={idUpdate ?? ''}
+							onChange={handleChangeIdInputUpdate}
+						></input>
+					</label>
+					<label className='admin-form__label'>
+						Name:
+						<input
+							className='admin-form__input'
+							id='name-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Plese enter name'
+							value={nameUpdate ?? ''}
+							onChange={handleChangeNameUpdate}
+						></input>
+					</label>
+					<label className='admin-form__label'>
+						Comment:
+						<input
+							className='admin-form__input'
+							id='comment-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Please enter comment'
+							value={commentUpdate ?? ''}
+							onChange={handleChangeCommentUpdate}
+						></input>
+					</label>
+				</AdminForm>
+			</div>
+			<ul className='stations-list__list'>
 				{stations.map((station) => (
 					<Station
 						key={station.id}
@@ -87,10 +147,11 @@ function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStat
 						updatedAt={station.updated_at}
 						login={station.login}
 						onDeleteStation={onDeleteStation}
+						onClickEditStation={handleClickEditButton}
 					/>
 				))}
 			</ul>
-		</>
+		</div>
 	);
 }
 

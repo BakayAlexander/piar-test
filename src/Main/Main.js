@@ -60,16 +60,32 @@ function Main() {
 			.catch((err) => console.log(`Возникла ошибка: ${err}`));
 	}
 
+	function handleUpdateStation(id, name, content) {
+		api
+			.updateStation(id, name, content)
+			.then(() => {
+				api.getStations().then((data) => {
+					setStations(data);
+				});
+			})
+			.catch((err) => console.log(`Возникла ошибка: ${err}`));
+	}
+
 	return (
 		<section className='main'>
-			<h1>Admin panel</h1>
-			<button onClick={signOut}>Log out</button>
+			<div className='main__title-container'>
+				<h1 className='main__title'>Admin panel</h1>
+				<button className='main__button-logout' onClick={signOut}>
+					Log out
+				</button>
+			</div>
 			<h2>Stations</h2>
 			<StationsList
 				stations={stations}
 				onDeleteStation={handleDeleteStation}
 				onCreateStation={handleCreateStation}
 				onSearchStation={handleSearchStation}
+				onUpdateStation={handleUpdateStation}
 			/>
 		</section>
 	);

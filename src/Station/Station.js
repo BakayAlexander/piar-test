@@ -1,10 +1,15 @@
 import React from 'react';
 import './Station.css';
 
-function Station({ id, name, comment, createdAt, updatedAt, login, onDeleteStation }) {
+function Station({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClickEditStation, ...props }) {
 	function handleDelete(e) {
 		e.preventDefault();
 		onDeleteStation(id);
+	}
+
+	function handleEdit(e) {
+		e.preventDefault();
+		onClickEditStation(id);
 	}
 
 	return (
@@ -13,7 +18,7 @@ function Station({ id, name, comment, createdAt, updatedAt, login, onDeleteStati
 				<h2 className='station__title'>Name of station: {name}</h2>
 				<div>
 					<button className='station__button-delete' onClick={handleDelete}></button>
-					<button className='station__button-edit'></button>
+					<button className='station__button-edit' onClick={handleEdit}></button>
 				</div>
 			</div>
 			<ul className='station__text-container'>
@@ -21,7 +26,6 @@ function Station({ id, name, comment, createdAt, updatedAt, login, onDeleteStati
 				<p className='station__text'>Id: {id}</p>
 				<p className='station__text'>Created at: {createdAt}</p>
 				<p className='station__text'>Updated at: {updatedAt}</p>
-				<p className='station__text'>Owner: {login}</p>
 			</ul>
 		</li>
 	);
