@@ -2,7 +2,7 @@
 	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
-	max-width: 500px;
+	width: 400px;
 }
 
 .auth-form__label {
@@ -18,9 +18,8 @@
 .auth-form__input {
 	width: 100%;
 	height: 50px;
-	border: none;
+	border: 1px solid #2f2f2f;
 	border-radius: 8px;
-	background-color: #2f2f2f;
 	color: white;
 	outline: none;
 	margin-top: 10px;
@@ -71,4 +70,20 @@
 
 .auth-form__signup-link:hover {
 	opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+	.auth-form {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.auth-form {
+		width: 300px;
+	}
+
+	.auth-form__submit-button {
+		margin-top: 100px;
+	}
 }

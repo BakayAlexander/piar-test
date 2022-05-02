@@ -1,0 +1,17 @@
+.login {
+	max-width: 1280px;
+	height: 100vh;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__title {
+	color: #2f2f2f;
+	margin: 0;
+	font-size: 25px;
+	font-weight: normal;
+}
