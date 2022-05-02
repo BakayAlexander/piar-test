@@ -1,0 +1,60 @@
+.station {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	height: 400px;
+	border: 1px solid #2f2f2f;
+	overflow: hidden;
+}
+
+.station__title-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 10px;
+	max-width: calc(100% - 12px);
+}
+
+.station__title {
+	margin: 0;
+	text-align: center;
+	width: 50%;
+	font-size: 14px;
+}
+
+.station__button-delete {
+	width: 18px;
+	height: 19px;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	background-image: url(../images/trash_button.svg);
+	background-size: cover;
+	border: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: opacity 0.5s ease-in;
+}
+
+.station__button-delete:hover {
+	opacity: 0.5;
+}
+
+.station__button-edit {
+	width: 18px;
+	height: 19px;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	background-image: url(../images/edit_button.svg);
+	background-size: cover;
+	border: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: opacity 0.5s ease-in;
+	margin-left: 15px;
+}
+
+.station__button-edit:hover {
+	opacity: 0.5;
+}

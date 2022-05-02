@@ -1,0 +1,9 @@
+.stations-list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: grid;
+	gap: 17px;
+	grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+	max-width: calc(100% - 40px);
+}

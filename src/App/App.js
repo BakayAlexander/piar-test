@@ -1,21 +1,60 @@
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import Main from '../Main/Main';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Register from '../Register/Register';
+import { Api } from '../utils/Api';
+import * as Auth from '../utils/Auth';
 
 function App() {
+	const history = useHistory();
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+	function handleRegister(name, comment, login, password) {
+		Auth.register(name, comment, login, password)
+			.then((res) => {
+				if (res.statusCode !== 422) {
+					history.push('/signin');
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	function handleLogin(loggin, password) {
+		setIsLoggedIn(true);
+		Auth.authorize(loggin, password)
+			.then((res) => {
+				if (res.user_jwt) {
+					setIsLoggedIn(true);
+					history.push('/');
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	// useEffect(() => {
+	// 	if (token) {
+	// 		setIsLoggedIn(true);
+	// 		history.push('/');
+	// 	}
+	// }, []);
+
 	return (
 		<div className='page'>
 			<Switch>
-				<Route exact path='/'>
-					<Main />
-				</Route>
+				<ProtectedRoute component={Main} exact path='/' isLoggedIn={isLoggedIn} />
 				<Route exact path='/signin'>
-					<Login />
+					<Login onSubmit={handleLogin} />
 				</Route>
 				<Route exact path='/signup'>
-					<Register />
+					<Register onSubmit={handleRegister} />
 				</Route>
 			</Switch>
 		</div>

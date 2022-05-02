@@ -2,9 +2,63 @@ import React from 'react';
 import './AuthForm.css';
 import { Link } from 'react-router-dom';
 
-function AuthForm({ buttonName, linkPath, linkName, linkSpan }) {
+function AuthForm({ isRegisterForm, buttonName, linkPath, linkName, linkSpan, onSubmit, ...props }) {
+	const [name, setName] = React.useState('');
+	const [comment, setComment] = React.useState('');
+	const [login, setLogin] = React.useState('');
+	const [password, setPassword] = React.useState('');
+
+	function handleChangeName(e) {
+		setName(e.target.value);
+	}
+	function handleChangeComment(e) {
+		setComment(e.target.value);
+	}
+
+	function handleChangeLogin(e) {
+		setLogin(e.target.value);
+	}
+
+	function handleChangePassword(e) {
+		setPassword(e.target.value);
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		isRegisterForm ? onSubmit(name, comment, login, password) : onSubmit(login, password);
+	}
+
 	return (
-		<form className='auth-form'>
+		<form className='auth-form' onSubmit={handleSubmit}>
+			{isRegisterForm && (
+				<>
+					<label className='auth-form__label'>
+						Name
+						<input
+							className='auth-form__input'
+							id='name-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Plese enter your login'
+							value={name ?? ''}
+							onChange={handleChangeName}
+						></input>
+					</label>
+
+					<label className='auth-form__label'>
+						Comment
+						<input
+							className='auth-form__input'
+							id='comment-input'
+							type='text'
+							autoComplete='none'
+							placeholder='Please enter your password'
+							value={comment ?? ''}
+							onChange={handleChangeComment}
+						></input>
+					</label>
+				</>
+			)}
 			<label className='auth-form__label'>
 				Login
 				<input
@@ -13,6 +67,8 @@ function AuthForm({ buttonName, linkPath, linkName, linkSpan }) {
 					type='text'
 					autoComplete='none'
 					placeholder='Plese enter your login'
+					value={login ?? ''}
+					onChange={handleChangeLogin}
 				></input>
 			</label>
 
@@ -24,6 +80,8 @@ function AuthForm({ buttonName, linkPath, linkName, linkSpan }) {
 					type='password'
 					autoComplete='none'
 					placeholder='Please enter your password'
+					value={password ?? ''}
+					onChange={handleChangePassword}
 				></input>
 			</label>
 			<button className='auth-form__submit-button' type='submit'>
