@@ -56,6 +56,7 @@ function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStat
 
 	return (
 		<div className='stations-list'>
+			<h2 className='stations-list__title'>Stations</h2>
 			<div className='stations-list__form-container'>
 				<AdminForm onSubmit={handleSubmitCreateStation} buttonName='Add' title='Add new station'>
 					<label className='admin-form__label'>

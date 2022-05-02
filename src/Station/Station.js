@@ -14,13 +14,14 @@ function Station({ id, name, comment, createdAt, updatedAt, onDeleteStation, onC
 
 	return (
 		<li className='station'>
-			<div className='station__title-container'>
-				<h2 className='station__title'>Name of station: {name}</h2>
-				<div>
-					<button className='station__button-delete' onClick={handleDelete}></button>
-					<button className='station__button-edit' onClick={handleEdit}></button>
-				</div>
+			{/* <div className='station__title-container'> */}
+			<div className='station__buttons-container'>
+				<button className='station__button-delete' onClick={handleDelete}></button>
+				<button className='station__button-edit' onClick={handleEdit}></button>
 			</div>
+			<h2 className='station__title'>Name of station: {name}</h2>
+
+			{/* </div> */}
 			<ul className='station__text-container'>
 				<p className='station__text'>Comment: {comment}</p>
 				<p className='station__text'>Id: {id}</p>

@@ -79,7 +79,6 @@ function Main() {
 					Log out
 				</button>
 			</div>
-			<h2>Stations</h2>
 			<StationsList
 				stations={stations}
 				onDeleteStation={handleDeleteStation}

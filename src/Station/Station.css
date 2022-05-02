@@ -2,29 +2,38 @@
 	display: flex;
 	flex-direction: column;
 	width: 300px;
-	height: 400px;
+	height: 300px;
 	border: 1px solid #2f2f2f;
 	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
 }
 
-.station__title-container {
+/* .station__title-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	margin-top: 10px;
 	max-width: calc(100% - 12px);
-}
+} */
 
 .station__title {
-	margin: 0;
+	margin: 30px 0 0;
 	text-align: center;
-	width: 50%;
-	font-size: 14px;
+	width: 80%;
+	font-size: 20px;
+	align-self: center;
+}
+
+.station__buttons-container {
+	position: absolute;
+	top: 5px;
+	right: 5px;
 }
 
 .station__button-delete {
-	width: 18px;
-	height: 19px;
+	width: 14px;
+	height: 14px;
 	padding: 0;
 	cursor: pointer;
 	background-color: transparent;
@@ -41,8 +50,8 @@
 }
 
 .station__button-edit {
-	width: 18px;
-	height: 19px;
+	width: 14px;
+	height: 14px;
 	padding: 0;
 	cursor: pointer;
 	background-color: transparent;
