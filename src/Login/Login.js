@@ -6,7 +6,7 @@ function Login() {
 	return (
 		<section className='login'>
 			<h2 className='login__title'>Welcome! Please sign in.</h2>
-			<AuthForm buttonName='Login' linkPath='/signup' linkName='Register' />
+			<AuthForm buttonName='Login' linkPath='/signup' linkSpan={`Hasn't registered yet?`} linkName='Register' />
 		</section>
 	);
 }

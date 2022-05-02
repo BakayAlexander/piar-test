@@ -2,7 +2,7 @@ import React from 'react';
 import './AuthForm.css';
 import { Link } from 'react-router-dom';
 
-function AuthForm({ buttonName, linkPath, linkName }) {
+function AuthForm({ buttonName, linkPath, linkName, linkSpan }) {
 	return (
 		<form className='auth-form'>
 			<label className='auth-form__label'>
@@ -10,8 +10,8 @@ function AuthForm({ buttonName, linkPath, linkName }) {
 				<input
 					className='auth-form__input'
 					id='login-input'
-					type='login'
-					autoComplete='text'
+					type='text'
+					autoComplete='none'
 					placeholder='Plese enter your login'
 				></input>
 			</label>
@@ -22,7 +22,7 @@ function AuthForm({ buttonName, linkPath, linkName }) {
 					className='auth-form__input'
 					id='password-input'
 					type='password'
-					autoComplete='current-password'
+					autoComplete='none'
 					placeholder='Please enter your password'
 				></input>
 			</label>
@@ -30,7 +30,7 @@ function AuthForm({ buttonName, linkPath, linkName }) {
 				{buttonName}
 			</button>
 			<div className='auth-form__link-container'>
-				<span className='auth-form__signup-span'>Hasn't registered yet? </span>
+				<span className='auth-form__signup-span'>{linkSpan}</span>
 				<Link className='auth-form__signup-link' to={linkPath}>
 					{linkName}
 				</Link>
