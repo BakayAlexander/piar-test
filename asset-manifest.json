@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.74203eca.css",
-    "main.js": "/static/js/main.0514b52f.js",
-    "static/js/787.7efd31bd.chunk.js": "/static/js/787.7efd31bd.chunk.js",
-    "index.html": "/index.html",
-    "static/media/trash_button.svg": "/static/media/trash_button.4d8e0309bb45440f5130.svg",
-    "static/media/edit_button.svg": "/static/media/edit_button.7b331ea8cca6781795e7.svg",
-    "static/media/popup_close.svg": "/static/media/popup_close.f1fa8fa3c41593459084.svg",
-    "main.74203eca.css.map": "/static/css/main.74203eca.css.map",
-    "main.0514b52f.js.map": "/static/js/main.0514b52f.js.map",
-    "787.7efd31bd.chunk.js.map": "/static/js/787.7efd31bd.chunk.js.map"
+    "main.css": "/piar-test/static/css/main.fc44ef7b.css",
+    "main.js": "/piar-test/static/js/main.0eb6c7a1.js",
+    "static/js/787.7efd31bd.chunk.js": "/piar-test/static/js/787.7efd31bd.chunk.js",
+    "index.html": "/piar-test/index.html",
+    "static/media/trash_button.svg": "/piar-test/static/media/trash_button.4d8e0309bb45440f5130.svg",
+    "static/media/edit_button.svg": "/piar-test/static/media/edit_button.7b331ea8cca6781795e7.svg",
+    "static/media/popup_close.svg": "/piar-test/static/media/popup_close.f1fa8fa3c41593459084.svg",
+    "main.fc44ef7b.css.map": "/piar-test/static/css/main.fc44ef7b.css.map",
+    "main.0eb6c7a1.js.map": "/piar-test/static/js/main.0eb6c7a1.js.map",
+    "787.7efd31bd.chunk.js.map": "/piar-test/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74203eca.css",
-    "static/js/main.0514b52f.js"
+    "static/css/main.fc44ef7b.css",
+    "static/js/main.0eb6c7a1.js"
   ]
 }
