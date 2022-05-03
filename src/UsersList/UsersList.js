@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import AdminForm from '../AdminForm/AdminForm';
 import Station from '../Station/Station';
-import './StationsList.css';
+import './UsersList.css';
 
-function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStation, onUpdateStation }) {
+function UsersList({ stations, onDeleteStation, onCreateStation, onSearchStation, onUpdateStation }) {
 	const [nameCreate, setNameCreate] = useState('');
 	const [commentCreate, setCommentCreate] = useState('');
 	const [searchId, setSearchId] = useState('');
@@ -162,4 +162,4 @@ function StationsList({ stations, onDeleteStation, onCreateStation, onSearchStat
 	);
 }
 
-export default StationsList;
+export default UsersList;

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Station.css';
+import './User.css';
 
-function Station({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClickEditStation, ...props }) {
+function User({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClickEditStation, ...props }) {
 	function handleDelete(e) {
 		e.preventDefault();
 		onDeleteStation(id);
@@ -19,6 +19,7 @@ function Station({ id, name, comment, createdAt, updatedAt, onDeleteStation, onC
 				<button className='station__button-edit' onClick={handleEdit}></button>
 			</div>
 			<h2 className='station__title'>Name of station: {name}</h2>
+
 			<ul className='station__text-container'>
 				<p className='station__text'>Comment: {comment}</p>
 				<p className='station__text'>Id: {id}</p>
@@ -29,4 +30,4 @@ function Station({ id, name, comment, createdAt, updatedAt, onDeleteStation, onC
 	);
 }
 
-export default Station;
+export default User;

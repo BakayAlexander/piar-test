@@ -63,73 +63,64 @@ export class Api {
 		});
 	}
 
-	// */------------/*
-
-	editAvatar(avatar) {
-		return fetch(`${this._url}/users/me/avatar`, {
-			method: 'PATCH',
-			headers: this._headers,
-			body: JSON.stringify({
-				avatar: avatar,
-			}),
-		}).then((res) => {
-			return this._prepareDate(res);
-		});
-	}
-
-	getCardsData() {
-		return fetch(`${this._url}/cards`, {
+	getUsers() {
+		return fetch(`${this._url}/users`, {
 			headers: this._headers,
 		}).then((res) => {
 			return this._prepareDate(res);
 		});
 	}
 
-	addNewCard(name, link) {
-		return fetch(`${this._url}/cards`, {
+	createUser(name, comment, login, password) {
+		return fetch(`${this._url}/users`, {
 			method: 'POST',
 			headers: this._headers,
 			body: JSON.stringify({
 				name: name,
-				link: link,
+				comment: comment,
+				login: login,
+				password: password,
 			}),
 		}).then((res) => {
 			return this._prepareDate(res);
 		});
 	}
 
-	deleteCard(id) {
-		return fetch(`${this._url}/cards/${id}`, {
+	getMe() {
+		return fetch(`${this._url}/users/me`, {
+			headers: this._headers,
+		}).then((res) => {
+			return this._prepareDate(res);
+		});
+	}
+
+	getUserById(id) {
+		return fetch(`${this._url}/users/${id}`, {
+			headers: this._headers,
+		}).then((res) => {
+			return this._prepareDate(res);
+		});
+	}
+
+	deleteUser(id) {
+		return fetch(`${this._url}/users/${id}`, {
 			method: 'DELETE',
 			headers: this._headers,
 		}).then((res) => {
 			return this._prepareDate(res);
 		});
 	}
-	0;
 
-	putCardLikes(id) {
-		return fetch(`${this._url}/cards/${id}/likes`, {
-			method: 'PUT',
+	updateUser(id, name, comment, login, password) {
+		return fetch(`${this._url}/users/${id}`, {
+			method: 'PATCH',
 			headers: this._headers,
-		}).then((res) => {
-			return this._prepareDate(res);
-		});
-	}
-
-	deleteCardLikes(id) {
-		return fetch(`${this._url}/cards/${id}/likes`, {
-			method: 'DELETE',
-			headers: this._headers,
-		}).then((res) => {
-			return this._prepareDate(res);
-		});
-	}
-
-	changeLikeCardStatus(id, condition) {
-		return fetch(`${this._url}/cards/${id}/likes`, {
-			method: condition ? 'PUT' : 'DELETE',
-			headers: this._headers,
+			body: JSON.stringify({
+				name: name,
+				comment: comment,
+				login: login,
+				password: password,
+			}),
 		}).then((res) => {
 			return this._prepareDate(res);
 		});

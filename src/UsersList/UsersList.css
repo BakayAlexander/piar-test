@@ -1,0 +1,28 @@
+.stations-list {
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 50px;
+	border-top: 1px solid #2f2f2f;
+	padding-bottom: 23px;
+}
+
+.stations-list__title {
+	text-align: center;
+}
+.stations-list__form-container {
+	margin: 0 auto;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.stations-list__list {
+	list-style: none;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 0;
+	display: grid;
+	gap: 17px;
+	grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+	max-width: calc(100% - 40px);
+}
