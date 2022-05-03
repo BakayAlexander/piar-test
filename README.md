@@ -26,7 +26,7 @@ This project was building with [Create React App](https://github.com/facebook/cr
 - Run `npm run start`
 - Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 
 ### `Technical stack`:
 
@@ -38,4 +38,4 @@ The page will reload when you make changes.\
 
 # Git-Hub Pages
 
-[Piar test]()
+[Piar test](https://bakayalexander.github.io/piar-test/)
