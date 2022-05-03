@@ -1,7 +1,7 @@
 import React from 'react';
-import './User.css';
+import './Station.css';
 
-function User({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClickEditStation, ...props }) {
+function Station({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClickEditStation }) {
 	function handleDelete(e) {
 		e.preventDefault();
 		onDeleteStation(id);
@@ -9,7 +9,7 @@ function User({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClic
 
 	function handleEdit(e) {
 		e.preventDefault();
-		onClickEditStation(id);
+		onClickEditStation(id, name, comment);
 	}
 
 	return (
@@ -19,15 +19,18 @@ function User({ id, name, comment, createdAt, updatedAt, onDeleteStation, onClic
 				<button className='station__button-edit' onClick={handleEdit}></button>
 			</div>
 			<h2 className='station__title'>Name of station: {name}</h2>
-
 			<ul className='station__text-container'>
 				<p className='station__text'>Comment: {comment}</p>
 				<p className='station__text'>Id: {id}</p>
 				<p className='station__text'>Created at: {createdAt}</p>
-				<p className='station__text'>Updated at: {updatedAt}</p>
+				{updatedAt ? (
+					<p className='station__text'>Updated at: {updatedAt}</p>
+				) : (
+					<p className='station__text'>Haven't updated yet</p>
+				)}
 			</ul>
 		</li>
 	);
 }
 
-export default User;
+export default Station;

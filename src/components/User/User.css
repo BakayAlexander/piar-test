@@ -1,35 +1,37 @@
-.station {
+.user {
 	display: flex;
 	flex-direction: column;
-	width: 300px;
+	width: 250px;
 	height: 300px;
 	border: 1px solid #2f2f2f;
+	border-radius: 8px;
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
 }
 
-.station__title {
+.user__title {
 	margin: 30px 0 0;
 	text-align: center;
 	width: 80%;
 	font-size: 20px;
 	align-self: center;
+	font-weight: normal;
 }
 
-.station__buttons-container {
+.user__buttons-container {
 	position: absolute;
 	top: 5px;
 	right: 5px;
 }
 
-.station__button-delete {
+.user__button-delete {
 	width: 14px;
 	height: 14px;
 	padding: 0;
 	cursor: pointer;
 	background-color: transparent;
-	background-image: url(../images/trash_button.svg);
+	background-image: url('../../images/trash_button.svg');
 	background-size: cover;
 	border: none;
 	background-repeat: no-repeat;
@@ -37,17 +39,17 @@
 	transition: opacity 0.5s ease-in;
 }
 
-.station__button-delete:hover {
+.user__button-delete:hover {
 	opacity: 0.5;
 }
 
-.station__button-edit {
+.user__button-edit {
 	width: 14px;
 	height: 14px;
 	padding: 0;
 	cursor: pointer;
 	background-color: transparent;
-	background-image: url(../images/edit_button.svg);
+	background-image: url('../../images/edit_button.svg');
 	background-size: cover;
 	border: none;
 	background-repeat: no-repeat;
@@ -56,6 +58,15 @@
 	margin-left: 15px;
 }
 
-.station__button-edit:hover {
+.user__button-edit:hover {
 	opacity: 0.5;
+}
+
+.user__text-container {
+	list-style: none;
+	padding-left: 20px;
+}
+
+.user__text {
+	font-size: 14px;
 }

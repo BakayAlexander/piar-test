@@ -1,4 +1,4 @@
-.stations-list {
+.users-list {
 	margin: 0 auto;
 	width: 90%;
 	margin-top: 50px;
@@ -6,17 +6,17 @@
 	padding-bottom: 23px;
 }
 
-.stations-list__title {
+.users-list__title {
 	text-align: center;
 }
-.stations-list__form-container {
+.users-list__form-container {
 	margin: 0 auto;
 	display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.stations-list__list {
+.users-list__list {
 	list-style: none;
 	margin: 0 auto;
 	margin-top: 100px;
@@ -25,4 +25,10 @@
 	gap: 17px;
 	grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
 	max-width: calc(100% - 40px);
+}
+
+.users-list__error {
+	text-align: center;
+	margin-top: 80px;
+	color: red;
 }

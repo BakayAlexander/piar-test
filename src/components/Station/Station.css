@@ -1,9 +1,10 @@
 .station {
 	display: flex;
 	flex-direction: column;
-	width: 300px;
+	width: 250px;
 	height: 300px;
 	border: 1px solid #2f2f2f;
+	border-radius: 8px;
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
@@ -15,6 +16,7 @@
 	width: 80%;
 	font-size: 20px;
 	align-self: center;
+	font-weight: normal;
 }
 
 .station__buttons-container {
@@ -29,7 +31,7 @@
 	padding: 0;
 	cursor: pointer;
 	background-color: transparent;
-	background-image: url(../images/trash_button.svg);
+	background-image: url('../../images/trash_button.svg');
 	background-size: cover;
 	border: none;
 	background-repeat: no-repeat;
@@ -47,7 +49,7 @@
 	padding: 0;
 	cursor: pointer;
 	background-color: transparent;
-	background-image: url(../images/edit_button.svg);
+	background-image: url('../../images/edit_button.svg');
 	background-size: cover;
 	border: none;
 	background-repeat: no-repeat;
@@ -58,4 +60,13 @@
 
 .station__button-edit:hover {
 	opacity: 0.5;
+}
+
+.station__text-container {
+	list-style: none;
+	padding-left: 20px;
+}
+
+.station__text {
+	font-size: 14px;
 }

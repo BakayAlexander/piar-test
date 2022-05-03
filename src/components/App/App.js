@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
@@ -6,8 +6,7 @@ import Login from '../Login/Login';
 import Main from '../Main/Main';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Register from '../Register/Register';
-import { Api } from '../utils/Api';
-import * as Auth from '../utils/Auth';
+import * as Auth from '../../utils/Auth';
 
 function App() {
 	const history = useHistory();
@@ -38,13 +37,6 @@ function App() {
 				console.log(err);
 			});
 	}
-
-	// useEffect(() => {
-	// 	if (token) {
-	// 		setIsLoggedIn(true);
-	// 		history.push('/');
-	// 	}
-	// }, []);
 
 	return (
 		<div className='page'>

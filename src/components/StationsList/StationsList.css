@@ -26,3 +26,9 @@
 	grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
 	max-width: calc(100% - 40px);
 }
+
+.stations-list__error {
+	text-align: center;
+	margin-top: 80px;
+	color: red;
+}

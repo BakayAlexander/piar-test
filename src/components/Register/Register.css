@@ -1,8 +1,6 @@
 .register {
 	max-width: 1280px;
-	height: 100vh;
-	margin: 0 auto;
-
+	margin: 50px auto auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
